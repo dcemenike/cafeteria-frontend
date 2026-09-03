@@ -1,0 +1,32 @@
+:root {
+  --cream: #e2d1c2ef;
+  --tan: #D8C4A0;
+  --brown-deep: #3E2723;
+  --gold: #C9962C;
+  --gold-deep: #A67C1E;
+  --burgundy: #7B2D26;
+  --charcoal: #2E2420;
+  --muted: #8A7967;
+  --available: #6B7D4F;
+  --unavailable: #7B2D26;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', system-ui, sans-serif;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  min-height: 100vh;
+}
+
+h1, h2, h3, .meal-name {
+  font-family: 'Playfair Display', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
