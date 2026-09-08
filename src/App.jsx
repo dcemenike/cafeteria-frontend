@@ -1,34 +1,25 @@
-import { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Dashboard from './components/Dashboard';
-import Footer from './components/Footer';
-import { meals } from './data/meals';
+import { Routes, Route } from 'react-router-dom';
+import CustomerMenu from './pages/CustomerMenu';
+import SignUp from './pages/SignUp';
+import SignIn from './pages/SignIn';
 import './App.css';
+import ProtectedRoute from './components/ProtectedRoute';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    function handleScroll() {
-      setScrolled(window.scrollY > window.innerHeight - 100);
-    }
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    };
-  }, [])
   return (
-    <>
+    <Routes>
 
-      <Header scrolled={scrolled}/>
-      <Hero />
-      <Dashboard meals={meals} />
-      <Footer />
+      <Route path="/" element={<CustomerMenu />} />
+      <Route path="/admin/signup" element={<SignUp />} />
+      <Route path="/admin/signin" element={<SignIn />} />
+      <Route path="/admin/dashboard" element={
+        <ProtectedRoute>
+          <AdminDashboard />
+        </ProtectedRoute>
+      } />
 
-    </>
+    </Routes>
   );
 }
 

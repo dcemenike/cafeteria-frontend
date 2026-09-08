@@ -23,6 +23,17 @@ export const meals = [
     },
     {
         id: 3,
+        name: "Fufu with Egusi Soup",
+        description: "Colourful fried rice loaded with mixed vegetables, prawns and tender chicken bits.",
+        category: "Soup &  Swallow",
+        price: 300,
+        updatedAt: "13:05",
+        available: false,
+        emoji: "🍛",
+        image: "https://picsum.photos/seed/fried-rice/600/450"
+    },
+    {
+        id: 3,
         name: "Egusi with Pounded Yam",
         description: "Rich egusi soup thickened with ground melon seeds, served with soft pounded yam.",
         category: "Soup & Swallow",

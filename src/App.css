@@ -32,9 +32,9 @@
 .hours-badge {
   background-color: var(--tan);
   color: var(--gold-deep);
-  font-weight: 500;
+  font-weight: 700;
   font-size: 0.85rem;
-  border-radius: 50rem;
+  border-radius: 10px;
   padding: 0.4rem 0.9rem;
 }
 
@@ -43,7 +43,7 @@
   border: none;
   color: white;
   font-weight: 600;
-  border-radius: 50rem;
+  border-radius: 10px;
   padding: 0.45rem 1.1rem;
   transition: background-color 0.2s, transform 0.15s;
 }
@@ -51,7 +51,6 @@
 .call-btn:hover {
   background-color: var(--gold-deep);
   color: white;
-  transform: translateY(-1px);
 }
 
 .site-nav-wrapper {
@@ -86,7 +85,7 @@
 }
 
 .floating .site-nav-bar {
-  background-color: rgba(46, 36, 32, 0.55);
+  background-color: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 50rem;
@@ -389,4 +388,759 @@
   color: var(--muted);
   padding: 1rem 0;
   margin-top: 2rem;
+}
+
+
+
+  /* SIGNUP PAGE */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--brown-deep);
+  padding: 1.5rem;
+}
+
+.auth-card {
+  background-color: var(--brown-mid);
+  border: 1px solid rgba(201, 150, 44, 0.15);
+  border-radius: 16px;
+  padding: 2.25rem 2rem;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.auth-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+  color: var(--cream);
+  text-align: center;
+}
+
+.auth-sub {
+  color: var(--tan);
+  font-size: 0.85rem;
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+.auth-error {
+  background-color: rgba(123, 45, 38, 0.35);
+  color: #F0B8B0;
+  padding: 0.65rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.auth-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--tan);
+  margin-bottom: 1rem;
+}
+
+.auth-input {
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background-color: rgba(0, 0, 0, 0.22);
+  color: var(--cream);
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--gold);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.auth-footer-link {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 1.25rem;
+  color: var(--tan);
+}
+
+.auth-btn {
+  width: 100%;
+  background-color: var(--gold);
+  color: var(--brown-deep);
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auth-btn:hover {
+  background-color: var(--gold-deep);
+}
+
+.auth-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-footer-link {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: 1.25rem;
+  color: var(--muted);
+}
+
+.auth-footer-link a {
+  color: var(--gold-deep);
+  font-weight: 600;
+}
+
+.auth-logo-mark {
+  width: 48px;
+  height: 48px;
+  background-color: var(--gold);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brown-deep);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 0 auto 1.25rem;
+}
+
+
+  /* SIGN IN/LOGIN PAGE */
+.auth-card--photo {
+  position: relative;
+  background-image: url('/public/images/black-womn-cooking.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.auth-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(46, 36, 32, 0.55) 0%,
+    rgba(46, 36, 32, 0.93) 55%,
+    rgba(46, 36, 32, 0.97) 100%
+  );
+  z-index: 1;
+}
+
+.auth-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* DASHBOARD PAGE */
+.admin-page {
+  min-height: 100vh;
+  background-color: var(--admin-bg);
+}
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: var(--admin-surface);
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.admin-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-username {
+  color: var(--tan);
+  font-size: 0.9rem;
+}
+
+.admin-logout-btn {
+  background-color: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 50rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.admin-logout-btn:hover {
+  background-color: var(--gold);
+  color: var(--brown-deep);
+}
+
+.admin-content {
+  padding: 2rem 1.5rem;
+  color: var(--cream);
+}
+
+.admin-category-section {
+  margin-bottom: 1.75rem;
+}
+
+.admin-category-title {
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--admin-border);
+  padding-bottom: 0.5rem;
+}
+
+.admin-meal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--admin-surface);
+  border-radius: 10px;
+  padding: 0.85rem 1.1rem;
+  margin-bottom: 0.6rem;
+  transition: background-color 0.15s ease;
+}
+
+.admin-meal-row:hover {
+  background-color: var(--admin-surface-hover);
+}
+
+.admin-meal-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-meal-name {
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.admin-meal-price {
+  color: var(--tan);
+  font-size: 0.85rem;
+}
+
+/* TOGGLE BUTTON */
+.toggle-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.toggle-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 56px;
+  height: 30px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.toggle-track {
+  width: 56px;
+  height: 30px;
+  background-color: #4a4a4a;
+  border-radius: 50rem;
+  position: relative;
+  transition: background-color 0.25s ease;
+  pointer-events: none;
+}
+
+.toggle-track::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.toggle-switch input:checked ~ .toggle-track {
+  background-color: var(--available);
+}
+
+.toggle-switch input:checked ~ .toggle-track::after {
+  transform: translateX(26px);
+}
+
+.toggle-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  min-width: 90px;
+}
+
+/* LOADER */
+/* From Uiverse.io by esraaabdel-kareem */ 
+.loader {
+  width: 100px;
+  height: 80px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.loader .cup {
+  position: absolute;
+  width: 25px;
+  height: 18px;
+  background-color: #3d1f1f;
+  border: 1px solid #2e2e2e;
+  z-index: 1;
+  border-radius: 2px 2px 10px 10px;
+  animation: expansion 6s infinite ease-in-out;
+  transform-origin: center;
+}
+
+.cup::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  width: calc(100% - 2px);
+  height: 2px;
+  background: #fed59fca;
+  border: 1px solid #2e2e2ebe;
+  border-radius: 50%;
+}
+.cup::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  width: calc(100% - 2px);
+  height: 4px;
+  background: #ffffff00;
+  border: 1px solid #2e2e2e;
+  border-top: none;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.loader .cup .cup-handle {
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  background-color: #fff;
+  border: 1px solid #2e2e2e;
+  right: -5px;
+  top: 2px;
+  border-radius: 2px 10px 20px 2px;
+}
+
+.loader .cup .smoke {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 15px;
+  height: 25px;
+  background: rgba(107, 102, 102, 0.433);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: rise 6s infinite ease-in-out;
+  filter: blur(8px);
+}
+
+.loader .cup .smoke.one {
+  animation-delay: 0s;
+}
+.loader .cup .smoke.two {
+  animation-delay: 1s;
+}
+.loader .cup .smoke.three {
+  animation-delay: 2s;
+}
+
+.loader .load {
+  position: absolute;
+  font-size: 10px;
+  opacity: 0.7;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+@keyframes expansion {
+  0% {
+    width: 25px;
+    transform: translateX(0);
+  }
+  40% {
+    width: 100%;
+    transform: translateX(0);
+  }
+  80% {
+    width: 25px;
+    transform: translateX(64px);
+  }
+  90% {
+    width: 100%;
+    transform: translateX(0);
+  }
+  100% {
+    width: 25px;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translate(-50%, 0) scale(0.4);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.7;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -120px) scale(1);
+    opacity: 0;
+  }
+}
+
+
+/* SECRET KEY INPUT */
+
+/* From Uiverse.io by 0xnihilism */ 
+.brutalist-container {
+  position: relative;
+  width: 200px;
+  font-family: monospace;
+  padding-top: 1rem;
+}
+
+.brutalist-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  border: 4px solid #000;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.brutalist-input:focus {
+  animation: focus-pulse 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite,
+    glitch 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+.brutalist-input:focus::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: white;
+  z-index: -1;
+}
+
+.brutalist-input:focus::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: -2;
+  clip-path: inset(0 100% 0 0);
+  animation: glitch-slice 4s steps(2, end) infinite;
+}
+
+@keyframes glitch-slice {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  10% {
+    clip-path: inset(0 5% 0 0);
+  }
+  20% {
+    clip-path: inset(0 80% 0 0);
+  }
+  30% {
+    clip-path: inset(0 10% 0 0);
+  }
+  40% {
+    clip-path: inset(0 50% 0 0);
+  }
+  50% {
+    clip-path: inset(0 30% 0 0);
+  }
+  60% {
+    clip-path: inset(0 70% 0 0);
+  }
+  70% {
+    clip-path: inset(0 15% 0 0);
+  }
+  80% {
+    clip-path: inset(0 90% 0 0);
+  }
+  90% {
+    clip-path: inset(0 5% 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
+.brutalist-label {
+  position: absolute;
+  left: -3px;
+  top: -35px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #000;
+  margin-top: 2.3rem;
+  padding: 2px 10px;
+  transform: rotate(-1deg);
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.brutalist-input:focus + .brutalist-label {
+  transform: rotate(0deg) scale(1.05);
+  background-color: var(--admin-bg);
+}
+
+.smooth-type {
+  position: relative;
+  overflow: hidden;
+}
+
+.smooth-type::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.smooth-type:focus::before {
+  opacity: 1;
+  animation: type-gradient 2s linear infinite;
+}
+
+@keyframes type-gradient {
+  0% {
+    background-position: 300px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.brutalist-input::placeholder {
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.brutalist-input:focus::placeholder {
+  color: transparent;
+}
+
+.brutalist-input:focus {
+  animation: focus-pulse 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+@keyframes focus-pulse {
+  0%,
+  100% {
+    border-color: #000;
+  }
+  50% {
+    border-color: var(--admin-bg)
+  }
+}
+
+
+/* CREATE MEAL BUTTON */
+/* From Uiverse.io by elijahgummer */ 
+.golden-button {
+  touch-action: manipulation;
+  display: inline-block;
+  outline: none;
+  font-family: inherit;
+  font-size: 1em;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.3em;
+  height: 2.75em;
+  line-height: 2.5em;
+  text-transform: uppercase;
+  padding: 0 1em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  background-image: linear-gradient(
+    160deg,
+    #a54e07,
+    #b47e11,
+    #fef1a2,
+    #bc881b,
+    #a54e07
+  );
+  border: 1px solid #a55d07;
+  color: rgb(120, 50, 5);
+  text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.golden-button:focus,
+.golden-button:hover {
+  background-size: 150% 150%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+  border: 1px solid rgba(165, 93, 7, 0.6);
+  color: rgba(120, 50, 5, 0.8);
+}
+
+.golden-button:active {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+}
+
+
+
+/* ADD MEAL SUBMIT BUTTON */
+/* From Uiverse.io by aboalsim114 */ 
+.mealForm {
+  max-width: 40vw;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background:  #0d0d0157;
+  border-radius: 10px;
+  overflow: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  animation: form-animation 0.5s ease-in-out;
+}
+
+@keyframes form-animation {
+  from {
+    transform: rotateX(-30deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.mealInput {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  color: rgb(255, 255, 255);
+  border: 2px solid #f2e03b78;
+  margin:auto;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.mealInput::placeholder {
+  color: #fff;
+}
+
+.mealInput:hover,
+.mealInput:focus {
+  border-color: #363738;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05) rotateY(20deg);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+  width: 30vw;
+}
+
+.addMealButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #14371e;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.addMealButton:hover {
+  background-color: #35290e;
+  font-size: 17px;
+  transform: scale(1.05) rotateY(20deg) rotateX(10deg);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }

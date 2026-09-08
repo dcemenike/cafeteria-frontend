@@ -6,14 +6,14 @@ function MealCard({ meal }) {
     const [imageLoaded, setImageLoaded] = useState(false);
 
     return (
-        <div className={`card meal-card ${!meal.available ? "unavailable" : ""}`}>
-            {!meal.available && <div className="unavailable-fade" />}
+        <div className={`card meal-card ${!meal.isAvailable ? "unavailable" : ""}`}>
+            {!meal.isAvailable && <div className="unavailable-fade" />}
 
             <div className={`card-img-top-wrap ${!imageLoaded && !imageFailed ? "loading" : ""}`}>
                 {!imageFailed ? (
                     <img
                         className="meal-photo"
-                        src={meal.image}
+                        src={meal.imageUrl}
                         alt={meal.name}
                         loading="lazy"
                         onLoad={() => setImageLoaded(true)}
@@ -21,10 +21,10 @@ function MealCard({ meal }) {
                         style={{ opacity: imageLoaded ? 1 : 0 }}
                     />
                 ) : (
-                    <span className="meal-emoji-fallback">{meal.emoji}</span>
+                    <span className="meal-emoji-fallback">🍽️</span>
                 )}
-                <span className={`status-banner ${meal.available ? "available" : "unavailable"}`}>
-                    {meal.available ? "Available" : "Unavailable"}
+                <span className={`status-banner ${meal.isAvailable ? "available" : "unavailable"}`}>
+                    {meal.isAvailable ? "Available" : "Unavailable"}
                 </span>
             </div>
 
@@ -37,7 +37,7 @@ function MealCard({ meal }) {
                     <div className="price">
                         ₦{meal.price.toLocaleString()} <small>/ scoop</small>
                     </div>
-                    <div className="updated-at">Updated {meal.updatedAt}</div>
+                    <div className="updated-at">Updated {new Date(meal.updatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
                 </div>
             </div>
         </div>

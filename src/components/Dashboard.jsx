@@ -28,7 +28,7 @@ function Dashboard({ meals }) {
                         {isOpen && (                    // && trick: renders nothing at all if isOpen is false
                             <div className="meal-grid">         
                                 {categoryMeals.map((meal) => (
-                                    <div className="meal-grid-item" key={meal.id}>        { /* key = React's per-item tracker, must be unique */}
+                                    <div className="meal-grid-item" key={meal._id}>        { /* key = React's per-item tracker, must be unique */}
                                         <MealCard meal={meal} />
                                     </div>
                                 ))}

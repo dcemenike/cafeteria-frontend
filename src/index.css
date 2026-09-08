@@ -9,6 +9,11 @@
   --muted: #8A7967;
   --available: #6B7D4F;
   --unavailable: #7B2D26;
+  --brown-mid: #55402F;
+  --admin-bg: #121212;
+  --admin-surface: #1E1E1E;
+  --admin-surface-hover: #262626;
+  --admin-border: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -23,7 +28,10 @@ body {
   min-height: 100vh;
 }
 
-h1, h2, h3, .meal-name {
+h1,
+h2,
+h3,
+.meal-name {
   font-family: 'Playfair Display', serif;
 }
 
