@@ -30,8 +30,8 @@
 }
 
 .hours-badge {
-  background-color: var(--tan);
-  color: var(--gold-deep);
+  background-color: transparent;
+  color: whitesmoke;
   font-weight: 700;
   font-size: 0.85rem;
   border-radius: 10px;
@@ -39,7 +39,7 @@
 }
 
 .call-btn {
-  background-color: var(--gold);
+  background-color: transparent;
   border: none;
   color: white;
   font-weight: 600;
@@ -94,6 +94,7 @@
 
 .floating .brand-title,
 .floating .brand-sub,
+.floating .call-btn
 .floating .hours-badge {
   color: white;
 }
@@ -102,8 +103,13 @@
   background-color: rgba(250, 243, 230, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 0;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-radius:  0 0 20px 20px;
+  box-shadow: 0 12px 12px rgba(0,0,0,0.06);
+}
+
+.docked .hours-badge,
+.docked .call-btn {
+  color: var(--gold-deepgold);
 }
 
 /* HERO SECTION */
@@ -1143,4 +1149,46 @@
   font-size: 17px;
   transform: scale(1.05) rotateY(20deg) rotateX(10deg);
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+
+/* CLOSE BUTTON FORADD MEAL FORM */
+.close-btn{
+  text-align: end;
+}
+
+.close-form-button{
+  color: whitesmoke;
+  padding: 0px 4px;
+  font-size: 12px;
+  background: #ecc9071e;
+  font-weight: 200;
+  letter-spacing: 2px;
+  text-align: end;
+}
+
+.close-form-button:hover {
+  background-color: rgb(238, 239, 205);
+  color: rgb(75, 48, 7);
+}
+
+/* Floating addmeal form modal */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.mealForm {
+    background-color: var(--admin-surface);
+    padding: 2rem;
+    border-radius: 40px;
+    max-width: 420px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
 }

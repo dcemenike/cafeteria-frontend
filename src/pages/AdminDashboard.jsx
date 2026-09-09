@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ToggleSwitch from '../components/ToggleSwitch';
 import { groupMealsByCategory } from '../utils/groupMealsByCategory';
+import { toast } from 'react-toastify';
 
 const AdminDashboard = () => {
     const navigate = useNavigate();
@@ -69,14 +70,18 @@ const AdminDashboard = () => {
             if (!response.ok) {
                 throw new Error(data.message || "Meal could not be added");
             }
+
             setMeals((prev) => [...prev, data.meal]);
             setMealName('');
             setMealPrice('');
             setMealDescription('');
             setMealCategory('');
             setImageUrl('');
+            toast.success("Meal created successfully!")
+            setShowAddForm(false)
         } catch (err) {
             setError(err.message);
+            toast.error(err.message)
         } finally {
             setLoading(false);
         }
@@ -164,7 +169,19 @@ const AdminDashboard = () => {
 
                 </main>
 
-                {showAddForm && <form className='mealForm' onSubmit={handleAddMeal}>
+                {showAddForm && (
+                    <div className="modal-backdrop">
+
+                <form className='mealForm' onSubmit={handleAddMeal}>
+
+
+
+                    <div className="close-btn ">
+                        <button className="close-form-button btn " onClick={() => setShowAddForm(false)} type='button'>close</button>
+                    </div>
+
+
+
                     <label htmlFor="Meal Name">
                         <input
                             placeholder="Meal name"
@@ -187,7 +204,7 @@ const AdminDashboard = () => {
 
                     <label htmlFor="Meal Category">
                         <select name="" id="" className='mealInput w-50'
-                        placeholder="Select Category"
+                            placeholder="Select Category"
                             value={mealCategory}
                             onChange={(e) => setMealCategory(e.target.value)}
                         >
@@ -225,7 +242,8 @@ const AdminDashboard = () => {
                     <button className='addMealButton'>Submit</button>
 
                 </form>
-                }
+                    </div>
+                )}
             </div>
         </div>
     )
