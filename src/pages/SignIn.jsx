@@ -48,7 +48,9 @@ const SignIn = () => {
                     <div className="auth-card-overlay"></div>
 
                     <div className="auth-card-content">
-                        <div className="auth-logo-mark">360</div>
+                        <div className="auth-logo-mark">
+                            <img src="https://res.cloudinary.com/dmevmqfw/image/upload/v1789035341/image-removebg-preview_d2euxv.png" alt="" />
+                        </div>
                         <h1 className="auth-title">Admin Sign In</h1>
                         <p className="auth-sub">Campus 360 staff login</p>
 

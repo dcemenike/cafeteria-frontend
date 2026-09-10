@@ -5,7 +5,9 @@ function Header({ scrolled }) {
         <div className={`site-nav-wrapper ${scrolled ? "docked" : "floating"}`}>
             <header className="site-nav-bar">
                 <div className="d-flex align-items-center gap-2">
-                    <div className="logo-mark">360</div>
+                    <div className="logo-mark">
+                        <img src="https://res.cloudinary.com/dmevmqfw/image/upload/v1789035341/image-removebg-preview_d2euxv.png" alt="" />
+                    </div>
                     <div>
                         <h1 className="brand-title">Campus 360</h1>
                         <div className="brand-sub">Cafeteria • Fresh daily</div>

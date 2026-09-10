@@ -5,6 +5,15 @@ function MealCard({ meal }) {
     const [imageFailed, setImageFailed] = useState(false);
     const [imageLoaded, setImageLoaded] = useState(false);
 
+    const unitByCategory = {
+    'Main Dish': 'scoop',
+    'Soup &  Swallow': 'wrap',
+    'Protein': 'piece',
+    'Snacks': 'piece',
+    'Sides': '',
+    'Drinks': 'bottle',
+};
+
     return (
         <div className={`card meal-card ${!meal.isAvailable ? "unavailable" : ""}`}>
             {!meal.isAvailable && <div className="unavailable-fade" />}
@@ -35,7 +44,7 @@ function MealCard({ meal }) {
 
                 <div className="card-footer-custom d-flex justify-content-between align-items-center">
                     <div className="price">
-                        ₦{meal.price.toLocaleString()} <small>/ scoop</small>
+                        ₦{meal.price.toLocaleString()} <small>/ {unitByCategory[meal.category] || 'item'}</small>
                     </div>
                     <div className="updated-at">Updated {new Date(meal.updatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
                 </div>
