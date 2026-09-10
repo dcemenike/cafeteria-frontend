@@ -156,6 +156,9 @@
 
 .hero-fullbleed-content h2 {
   font-size: 2rem;
+  font-weight: bolder;
+  font-style: heavy;
+  
   margin-bottom: 0.5rem;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.8)
 }

@@ -10,7 +10,7 @@ function Header({ scrolled }) {
                     </div>
                     <div>
                         <h1 className="brand-title">Campus 360</h1>
-                        <div className="brand-sub">Cafeteria • Fresh daily</div>
+                        <div className="brand-sub">Good food <span className="text-danger">Great Vibes</span> </div>
                     </div>
                 </div>
 

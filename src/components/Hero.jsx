@@ -12,8 +12,8 @@ function Hero() {
             <div className="hero-fullbleed-overlay"></div>
 
             <div className="hero-fullbleed-content">
-                <h2>Today's Fresh Menu</h2>
-                <p>Fresh meals daily • Updated live from the kitchen</p>
+                <h2>Tastes just like home</h2>
+                <p>Fresh meals daily </p>
                 <a href="#dashboard" className="explore-btn">
                     Explore Our Menu →
                 </a>
