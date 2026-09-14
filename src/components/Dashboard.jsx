@@ -9,14 +9,14 @@ function Dashboard({ meals }) {
     function toggleCategory(name) {
         setOpenCategories((prev) => {     // (prev) => ... = read CURRENT state, avoid stale-click bugs
             const currentlyOpen = prev[name] !== false;                  
-            return{...prev, [name]: !currentlyOpen}           // flip ONLY this one drawer (undefined flips to true)
-        })
+            return { ...prev, [name]: !currentlyOpen};           // flip ONLY this one drawer (undefined flips to true)
+        });
     }
 
     return (
         <main id="dashboard" className="container main-content">
             {Object.entries(grouped).map(([categoryName, categoryMeals]) => {       // Object.entries: turns { key: value } into [[key, value], ...] so .map() works
-                const isOpen = openCategories[categoryName] !== false,        
+                const isOpen = openCategories[categoryName] !== false;   
 
                 return (
                     <section key={categoryName} className="category-section mb-3">
