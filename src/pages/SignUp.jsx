@@ -88,16 +88,16 @@ const SignUp = () => {
 
                         <label className="secret-key">
                             {/* <!-- From Uiverse.io by 0xnihilism --> */}
-                            <div class="brutalist-container">
+                            <div className="brutalist-container">
                                 <input
                                     placeholder="********"
-                                    class="brutalist-input smooth-type"
+                                    className="brutalist-input smooth-type"
                                     type="password"
                                     value={registerSecret}
                                     onChange={(e) => setRegisterSecret(e.target.value)}
 
                                 />
-                                <label class="brutalist-label">SECRET KEY</label>
+                                <label className="brutalist-label">SECRET KEY</label>
                             </div>
 
 

@@ -44,14 +44,14 @@ function CustomerMenu() {
         <>
             <Header scrolled={scrolled} />
             <Hero />
-            {loading && <div class="loader">
-                <div class="cup">
-                    <div class="cup-handle"></div>
-                    <div class="smoke one"></div>
-                    <div class="smoke two"></div>
-                    <div class="smoke three"></div>
+            {loading && <div className="loader">
+                <div className="cup">
+                    <div className="cup-handle"></div>
+                    <div className="smoke one"></div>
+                    <div className="smoke two"></div>
+                    <div className="smoke three"></div>
                 </div>
-                <div class="load">..........................</div>
+                <div className="load">..........................</div>
             </div>}
             {error && <div className="error">{error}</div>}
             {!loading && !error && <Dashboard meals={meals} />}

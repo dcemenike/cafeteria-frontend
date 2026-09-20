@@ -42,8 +42,30 @@ const AdminDashboard = () => {
 
     }, []);
 
+    // ADD MEAL
     const handleAddMeal = async (event) => {
         event.preventDefault();
+
+        if (!mealName.trim()) {
+            toast.error('Please enter a meal name.');
+            return;
+        }
+        if (!mealDescription.trim()) {
+            toast.error('Please enter a meal description.');
+            return;
+        }
+        if (!mealCategory) {
+            toast.error('Please select a category.');
+            return;
+        }
+        if (!mealPrice || Number(mealPrice) < 0) {
+            toast.error('Please enter a valid price.');
+            return;
+        }
+        if (!imageUrl.trim()) {
+            toast.error('Please add an image URL.');
+            return;
+        }
 
         const token = localStorage.getItem('adminToken');
         const newMeal = {
@@ -81,7 +103,6 @@ const AdminDashboard = () => {
             toast.success("Meal created successfully!")
             setShowAddForm(false)
         } catch (err) {
-            setError(err.message);
             toast.error(err.message)
         } finally {
             setLoading(false);
@@ -226,6 +247,7 @@ const AdminDashboard = () => {
                                     type='text'
                                     value={mealName}
                                     onChange={(e) => setMealName(e.target.value)}
+                                    required
                                 />
                             </label>
 
@@ -236,6 +258,7 @@ const AdminDashboard = () => {
                                     type='text'
                                     value={mealDescription}
                                     onChange={(e) => setMealDescription(e.target.value)}
+                                    required
                                 />
                             </label>
 
@@ -243,6 +266,7 @@ const AdminDashboard = () => {
                                 <select name="" id="" className='mealInput w-50'
                                     placeholder="Select Category"
                                     value={mealCategory}
+                                    required
                                     onChange={(e) => setMealCategory(e.target.value)}
                                 >
                                     <option className='bg-dark' value="">Select Category</option>
@@ -260,7 +284,7 @@ const AdminDashboard = () => {
                                 <input
                                     placeholder="Price"
                                     className="mealInput"
-                                    type='text'
+                                    type='number'
                                     value={mealPrice}
                                     onChange={(e) => setMealPrice(e.target.value)}
                                 />
@@ -276,7 +300,7 @@ const AdminDashboard = () => {
                                 />
                             </label>
 
-                            <button className='addMealButton'>Submit</button>
+                            <button className='addMealButton' disabled={loading} >Submit</button>
 
                         </form>
                     </div>
