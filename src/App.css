@@ -582,6 +582,7 @@
 }
 
 .admin-topbar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -623,6 +624,66 @@
 .admin-logout-btn:hover {
   background-color: var(--gold);
   color: var(--brown-deep);
+}
+
+.admin-topbar-desktop-actions {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hamburger-btn {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--cream);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-admin-menu {
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  margin-top: 0.5rem;
+  background-color: var(--admin-surface-hover);
+  border: 1px solid var(--admin-border);
+  border-radius: 10px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 30;
+  min-width: 180px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+}
+
+.mobile-menu-item {
+  background: none;
+  border: none;
+  text-align: left;
+  color: var(--cream);
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.mobile-menu-item:hover {
+  background-color: rgba(255,255,255,0.06);
+}
+
+.mobile-menu-item--danger {
+  color: #F0B8B0;
+}
+
+@media (min-width: 768px) {
+  .admin-topbar-desktop-actions {
+    display: flex;
+  }
+  .hamburger-btn,
+  .mobile-admin-menu {
+    display: none;
+  }
 }
 
 .admin-content {
@@ -1255,4 +1316,48 @@
   max-width: 400px;
   width: 90%;
   color: var(--cream);
+}
+
+/* KEBAB MENU */
+.kebab-wrapper { position: relative; }
+.kebab-btn { background: none; border: none; color: var(--tan); font-size: 1.4rem; line-height: 1; cursor: pointer; padding: 0.25rem 0.5rem; border-radius: 6px; }
+.kebab-btn:hover { background-color: rgba(255, 255, 255, 0.08); }
+.kebab-menu { position: absolute; top: 100%; right: 0; margin-top: 0.3rem; background-color: var(--admin-surface-hover); border: 1px solid var(--admin-border); border-radius: 8px; overflow: hidden; z-index: 20; min-width: 120px; box-shadow: 0 8px 20px rgba(0,0,0,0.35); }
+.kebab-menu-item { display: block; width: 100%; text-align: left; background: none; border: none; color: var(--cream); padding: 0.6rem 0.9rem; cursor: pointer; font-size: 0.9rem; }
+.kebab-menu-item:hover { background-color: rgba(255, 255, 255, 0.06); }
+.kebab-menu-item--danger { color: #F0B8B0; }
+
+/* TOGGLE PASSWORD */
+.password-field-wrapper {
+  position: relative;
+}
+
+.password-field-wrapper .auth-input {
+  padding-right: 3.5rem;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.brutalist-toggle-btn {
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
 }
