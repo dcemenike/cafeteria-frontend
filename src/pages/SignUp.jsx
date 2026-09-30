@@ -84,7 +84,6 @@ const SignUp = () => {
                         <label className="auth-label">
                             Password
                             <div className="password-field-wrapper">
-
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     value={password}
@@ -98,38 +97,20 @@ const SignUp = () => {
                             </div>
                         </label>
 
-                        <label className="secret-key">
-                            {/* <!-- From Uiverse.io by 0xnihilism --> */}
-                            <div className="brutalist-container">
+                        <label className="auth-label">
+                            Secret Key
+                            <div className="password-field-wrapper">
                                 <input
-                                    type={showPassword ? "text" : "password"}
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required
-                                    className="auth-input"
-                                />
-                                <button type="button" className="password-toggle-btn" onClick={() => setShowPassword((prev) => !prev)}>
-                                    {showPassword ? "Hide" : "Show"}
-                                </button>
-                            </div>
-                        </label>
-
-                        <label className="secret-key">
-                            <div className="brutalist-container">
-                                <input
-                                    placeholder="********"
-                                    className="brutalist-input smooth-type"
                                     type={showSecret ? "text" : "password"}
                                     value={registerSecret}
                                     onChange={(e) => setRegisterSecret(e.target.value)}
+                                    required
+                                    className="auth-input"
                                 />
-                                <label className="brutalist-label">SECRET KEY</label>
-                                <button type="button" className="brutalist-toggle-btn" onClick={() => setShowSecret((prev) => !prev)}>
+                                <button type="button" className="password-toggle-btn" onClick={() => setShowSecret((prev) => !prev)}>
                                     {showSecret ? "Hide" : "Show"}
                                 </button>
                             </div>
-
-
                         </label>
 
                         <button type="submit" className="auth-btn" disabled={loading}>

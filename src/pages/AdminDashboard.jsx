@@ -124,6 +124,40 @@ const AdminDashboard = () => {
             setLoading(false);
         }
     }
+
+    //UPLOAD IMAGE
+    const uploadImage = async (file) => {
+        const maxSizeMb = 5;
+        if (file.size > maxSizeMb * 1024 * 1024) {
+            toast.error(`Image must be smaller than ${maxSizeMb}MB`);
+            return null;
+        }
+
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('upload_preset', 'campus360');
+
+        try {
+            const response = await fetch(
+                'https://api.cloudinary.com/v1_1/dmevmqfw/image/upload',
+                {
+                    method: 'POST',
+                    body: formData
+                }
+            );
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error?.message || 'Image upload failed');
+            }
+
+            return data.secure_url;
+        } catch (err) {
+            toast.error(err.message);
+            return null;
+        }
+    }
+
     //EDIT MEAL
     const handleEditMeal = async (event) => {
         event.preventDefault();
@@ -249,6 +283,7 @@ const AdminDashboard = () => {
         localStorage.removeItem('adminUsername');
         navigate('/admin/signin');
     }
+
 
     const grouped = groupMealsByCategory(meals)
 
@@ -419,14 +454,21 @@ const AdminDashboard = () => {
                                 />
                             </label>
 
-                            <label htmlFor="Image Url">
+                            <label htmlFor="Meal Image">
                                 <input
-                                    placeholder="Image Url"
+                                    type="file"
+                                    accept="image/*"
                                     className="mealInput"
-                                    type='text'
-                                    value={imageUrl}
-                                    onChange={(e) => setImageUrl(e.target.value)}
+                                    onChange={async (e) => {
+                                        const file = e.target.files[0];
+                                        if (!file) return;
+                                        const url = await uploadImage(file);
+                                        if (url) setImageUrl(url);
+                                    }}
                                 />
+                                {imageUrl && (
+                                    <img src={imageUrl} alt="Preview" className="image-preview" />
+                                )}
                             </label>
 
                             <button className='addMealButton' disabled={loading}>
