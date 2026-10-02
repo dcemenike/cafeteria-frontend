@@ -123,6 +123,7 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
+  filter: brightness(0.78) contrast(1.08) saturate(1.1) sepia(0.12);
 }
 
 .hero-fullbleed-bg {
@@ -136,10 +137,24 @@
   z-index: 1;
 }
 
+.hero-fullbleed-warmwash {
+  position: absolute;
+  inset: 0;
+  background-color: var(--gold);
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+  z-index:1;
+}
+
 .hero-fullbleed-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(46, 36, 32, 0.5);
+  background: linear-gradient(
+    180deg,
+    rgba(46, 36, 32, 0.25) 0%,
+    rgba(46, 36, 32, 0.45) 55%,
+    rgba(46, 36, 32, 0.8) 100%
+  );
   z-index: 2;
 }
 
@@ -154,22 +169,31 @@
   text-align: center;
   color: white;
   padding: 0 1.5rem;
-  z-index: 4;
+  z-index: 2;
 }
 
 .hero-fullbleed-content h2 {
+  color: white;
   font-size: 2rem;
   font-weight: bolder;
-  font-style: heavy;
-  
   margin-bottom: 0.5rem;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.8)
+  text-shadow:
+    1px 1px 0 #3a2a20,
+    2px 2px 0 #332419,
+    3px 3px 0 #2c1f14,
+    4px 4px 0 #251a10,
+    5px 5px 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero-fullbleed-content p {
+  color: white;
   font-size: 1rem;
-  opacity: 0.9;
+  opacity: 0.95;
   margin-bottom: 1.5rem;
+  text-shadow:
+    1px 1px 0 #3a2a20,
+    2px 2px 0 #2c1f14,
+    3px 3px 8px rgba(0, 0, 0, 0.6);
 }
 
 .explore-btn {
@@ -407,6 +431,17 @@
 
 .card-img-top-wrap.loading {
   animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.error {
+  max-width: 420px;
+  margin: 3rem auto;
+  background-color: rgba(123, 45, 38, 0.1);
+  color: var(--burgundy);
+  padding: 0.85rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  text-align: center;
 }
 
 
@@ -1060,6 +1095,14 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
+/* IMAGE PREVIEW */
+.image-preview {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
 
 /* CLOSE BUTTON FORADD MEAL FORM */
 .close-btn {

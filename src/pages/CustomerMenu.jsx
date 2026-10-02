@@ -22,20 +22,24 @@ function CustomerMenu() {
         const fetchMeals = async () => {
             try {
                 const response = await fetch(`${import.meta.env.VITE_API_URL}/meals`);
-                const data = await response.json();
+                const data = await response.json().catch(() => ({}));
 
                 if (!response.ok) {
-                    throw new Error(data.message || 'Failed to fetch meals');
+                    throw new Error(data.message || 'Unable to load the menu right now. Please try again.');
                 }
                 setMeals(data.meals);
             } catch (err) {
-                setError(err.message);
+                if (err instanceof TypeError) {
+                    setError('Unable to load the menu right now. Please check back soon.');
+                } else {
+                    setError(err.message);
+                }
             } finally {
                 setLoading(false);
             }
         }
         fetchMeals();
-        const intervalId = setInterval(fetchMeals, 20000); 
+        const intervalId = setInterval(fetchMeals, 20000);
 
         return () => clearInterval(intervalId);
     }, [])

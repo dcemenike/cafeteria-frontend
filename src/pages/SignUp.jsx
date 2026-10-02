@@ -52,7 +52,8 @@ const SignUp = () => {
         <>
             <div className="auth-page">
                 <div className="auth-card">
-                    <div className="auth-logo-mark">360</div>
+                    <div className="auth-logo-mark"><img src="https://res.cloudinary.com/dmevmqfw/image/upload/v1789035341/image-removebg-preview_d2euxv.png" alt="" />
+                    </div>
                     <h1 className="auth-title">Create Admin Account</h1>
                     <p className="auth-sub">Campus 360 staff sign up</p>
 

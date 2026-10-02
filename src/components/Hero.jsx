@@ -5,10 +5,11 @@ function Hero() {
         <section className="hero-fullbleed">
             <img
                 className="hero-fullbleed-bg"
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80"
+                src="https://res.cloudinary.com/dmevmqfw/image/upload/v1790933312/DSC_2374_irsbnz.jpg"
                 alt="Campus 360 Cafeteria interior"
                 fetchPriority="high"
             />
+            <div className="hero-fullbleed-warmwash"></div>
             <div className="hero-fullbleed-overlay"></div>
 
             <div className="hero-fullbleed-content">
